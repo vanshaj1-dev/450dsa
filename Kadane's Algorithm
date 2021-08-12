@@ -1,0 +1,17 @@
+class Solution{
+
+    // arr: input array
+    // n: size of array
+    //Function to find the sum of contiguous subarray with maximum sum.
+    int maxSubarraySum(int arr[], int n){
+        
+        int currentSum=arr[0];
+        int maximumSum=arr[0];
+        for(int i=1;i<n;i++){
+            currentSum = Math.max(currentSum+arr[i],arr[i]);
+            maximumSum = Math.max(maximumSum,currentSum);
+        }
+        return maximumSum;
+    }
+    
+}
