@@ -1,0 +1,26 @@
+class Solution {
+    static ArrayList<Integer> factorial(int N){
+        ArrayList<Integer> result = new ArrayList<Integer>();
+        int size=0,carry=0;
+        result.add(0,1);
+        size=1;
+        int val=2;
+        while(val<=N)
+        {
+            for(int i=size-1;i>=0;i--)
+            {
+                int temp=result.get(i)*val+carry;
+                result.set(i,temp%10);
+                carry=temp/10;
+            }
+            while(carry!=0)
+            {
+                result.add(0,carry%10);
+                carry=carry/10;
+                size++;
+            }
+            val++;
+        }
+   return result;
+    }
+    }
