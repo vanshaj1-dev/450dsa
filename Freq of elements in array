@@ -1,0 +1,17 @@
+https://leetcode.com/problems/majority-element-ii/
+
+class Solution {
+    public List<Integer> majorityElement(int[] nums) {
+HashSet<Integer> hs = new HashSet<Integer>();
+List<Integer> list = new ArrayList<>();
+Arrays.sort(nums);
+int gaps=nums.length/3;        //to check whether a no has freq > n/k
+for(int i=0;i<nums.length && nums.length>i+gaps;++i)
+{
+if(nums[i]==nums[i+gaps])
+hs.add(nums[i]);
+}
+list.addAll(hs);
+return list;
+}
+}
