@@ -1,0 +1,22 @@
+class Compute {
+    public String isSubset( long a1[], long a2[], long n, long m) {
+        String subset="";
+        HashSet<Long> hs = new HashSet<Long>();
+        for(int i=0;i<n;i++)
+        {
+            if(!hs.contains(a1[i])){
+            hs.add(a1[i]);
+            }
+        }
+        for(int i=0;i<m;i++)
+        {
+            if(!hs.contains(a2[i])){
+                 subset="No";
+                 return subset;
+            }
+        }
+            subset="Yes";
+        return subset;
+        
+    }
+}
