@@ -1,0 +1,18 @@
+class Solution {
+    int binarysearch(int arr[], int n, int k){
+        return helper(arr, 0, n - 1, k);
+    }
+     public int helper(int[] nums, int s, int e, int target) {
+        if (s > e) {
+            return -1;
+        }
+        int mid = (s + e) / 2;
+        if (nums[mid] == target) {
+            return mid;
+        } else if (nums[mid] > target) {
+            return helper(nums,s, mid - 1, target);
+        } else {
+            return helper(nums, mid + 1, e, target);
+        }
+}
+}
