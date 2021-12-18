@@ -1,0 +1,45 @@
+lass MyHashMap {
+    
+    public MyHashMap() {
+        // Node first;
+    }
+    
+    class Node {
+        int val;
+        int key;
+        Node next;
+        public Node(int key,int val,Node next){
+            this.key=key;
+            this.val=val;
+            this.next=next;
+        }
+    }
+    Node first;
+    public void put(int key, int value) {
+        first = new Node(key,value,first);
+    }
+    
+    public int get(int key) {
+        for(Node x=first;x!=null;x=x.next){
+            if(key==(x.key)){
+                return x.val;
+            }
+        }
+        return -1;
+    }
+    
+    public void remove(int key) {
+         for(Node x=first;x!=null;x=x.next){
+            if(key==(x.key)){
+                x.val = -1;
+            }
+        }
+    }
+}
+/**
+ * Your MyHashMap object will be instantiated and called as such:
+ * MyHashMap obj = new MyHashMap();
+ * obj.put(key,value);
+ * int param_2 = obj.get(key);
+ * obj.remove(key);
+ */
