@@ -1,0 +1,10 @@
+class Solution {
+    public String reverseStr(String s, int k) {
+      for(int i = 0; i < s.length(); i+=2*k) {
+            String temp = s.substring(i, Math.min(i+k, s.length()));
+            temp = new StringBuffer(temp).reverse().toString();
+            s = s.substring(0,i) + temp + s.substring(Math.min(i+k, s.length()));
+        }
+        return s;
+    }
+}
