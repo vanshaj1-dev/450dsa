@@ -1,0 +1,34 @@
+class Solution {
+    public int removeDuplicates(int[] nums) {
+    int i=0,j=1;
+    while(nums.length<2)
+        return nums.length;
+    while(j<nums.length)
+    {
+        if(nums[i]!=nums[j])
+        {
+            i++;
+            nums[i]=nums[j];
+        }
+        j++;
+    }
+    return i+1;
+    }
+    }
+    
+    /////////////////////////////// ALTERNATE WAY ////////////////////////////////////////
+    
+    class Solution {
+    public int removeDuplicates(int[] nums) {
+        if(nums.length==0)
+            return 0;
+        int res=1;
+        for(int i=1;i<nums.length;i++){
+            if(nums[i]!=nums[res-1]){
+                nums[res]=nums[i];
+                res++;
+            }
+        } 
+        return res;
+    }
+    }
